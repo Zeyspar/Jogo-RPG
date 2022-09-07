@@ -1,0 +1,131 @@
+#include <iostream>
+#include <cstdlib>
+#include <locale.h>
+#include <fstream>
+
+using namespace std;
+
+struct Personagem{
+    string nome, nascimento;
+    int forca, velocidade, resistencia, mira;
+};
+
+
+
+
+string kraig = "Kraig";
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+    ifstream narrador;
+    string linhas;
+
+    Personagem classe1;
+    Personagem nome, nascimento;
+    Personagem forca, velocidade, resistencia;
+
+    string escolha1, escolha2, escolha3, escolha4, escolha5, escolha6, escolha7, escolha8, escolha9, eacolha10;
+
+    cout << "\t" << kraig << ": Olá Rapaz... Qual o seu nome nobre viajante?  ";
+    cin >> nome.nome;
+
+    cout << "\t" << kraig << ": E de onde você é " << nome.nome << "?  ";
+    cin >> nascimento.nascimento;
+
+    cout << "\t" << kraig << ": Seja Muito bem vindo " << nome.nome << " de " << nascimento.nascimento << "." << endl << endl;
+    cout << "\t";
+    system("pause");
+    cout << "\n";
+
+
+    cout << "\t" << kraig << ": O meu nome é Kraig, eu sou dono desta taverna a mais de uma década, ";
+    cout << "serei um ombro amigo sempre que desejar tomar uma cerveja para relaxar." << endl;
+    cout << "\tE então, você deseja se hospedar em nossos aposentos para se descansar da longa viajem?" << endl << endl;
+    cout << "\tEscolha: Sim ou Não >> ";
+    cin >> escolha1;
+    cout << "\n";
+
+    if (escolha1 == "sim" || escolha1 == "Sim"){
+        cout << "\t" << kraig << ": Ótimo, venha comigo, cuidado com as escadas..." << endl << endl;
+        cout << "\t";
+        system("pause");
+        cout << endl;
+        cout << "\t" << kraig << ": Aqui será o teu quarto nesta noite, aconchegue-se bem pois quero te mostrar uma coisa amanhã de manhã...";
+        cout << endl << "\tAgora me dê licença pois tenho alguns beberrões para sassiar. Boa noite "<< nome.nome << " de " << nascimento.nascimento << endl << endl;
+
+            cout << endl;
+            narrador.open("narração(1).txt");       //ABRINDO ARQUIVO.e
+            if (narrador.is_open()){                //SE O ARQUIVO ESTIVER ABERTO
+            while (getline(narrador,linhas)){       //PEGUE AS LINHAS DO ARQUIVO --> QUEBRE A LINHA...
+                    cout << linhas <<  endl;        //MOSTRE AS LINHAS NO BLOCO DE COMANDO
+                }
+            }else{                                  //SE NÃO FOR POSSÍVEL ABRIR MOSTRE A MENSAGEM NA TELA
+                cout << "\tNão foi possivel abrir" << endl << endl;
+            }
+            narrador.close();                       //FECHANDO ARQUIVO.
+
+            cout << "\tA noite se vai e logo surge a manhã com seus poderosos raios solares que com uma breca na parede lhe \n\tdispara um feixe de luz em teu rosto." << endl << endl;
+            cout << endl << "\t";
+            system("pause");
+
+                cout << "\n\n\tVocê se incomoda com a luz e acorda? ";
+                cin >> escolha2;
+                cout << endl << endl;
+
+                if (escolha2 == "sim" || escolha2 == "Sim"){
+                        cout << "\tNo quarto onde você está tem um banheiro único como se fosse uma suíte, nele há uma pia \n\tcom uma torneira que demora sair uma água barrenta e enferrujada." << endl;
+                        cout << "\tAo lado da sua cama está sua mala de roupas, nela contém alguns pertences mais necessários \n\tcomo camisetas, meias, calças e escova de dentes" << endl << endl;
+                        cout << "\n\n\tVocê se levanta se levanta e vai lavar o seu rosto para acordar?  ";
+                        cin >> escolha3;
+                        cout << endl << endl;
+
+                            if (escolha3 == "sim" || escolha3 == "Sim"){
+
+                                cout << "\tApós fazer a sua higiene pessoal você se arruma e desce ou faz mais alguma coisa no quarto? ";
+                                cin >> escolha4;
+
+
+
+                                        /*cout << "\tDescendo, uma das garçonetes lhe puxa para sentar-se à mesa e com um sorriso no rosto diz: " << endl << endl;
+                                        cout << "\tGarçonete: Um omelete com bakon saindo no capricho. Por conta da casa claro :)" << endl << endl << endl;
+
+                                        cout << "\tMas infelizmente, antes que qualquer ovo pudesse ser estalado na frigideira, um alto som é ouvido e todos entram em pânico" << endl << endl;
+                                        cout << "\tVocê se prontifica a ir na direção do som? ";
+                                        cout << "\tFoi um som de disparo, alguém puxou o gatilho perto de onde você estava." << endl << endl;
+                                        cin >> escolha5;*/
+
+
+
+
+
+
+                            }else if (escolha3 == "não" || escolha3== "Não"){
+
+
+
+                            }else {
+                                cout << "\tKraig abre a porta gritando como um maluco e o puxa para baixo te \nforçando a se vestir descendo as escadas." <<  endl;
+                            }
+
+
+
+                }else if (escolha2 == "não" || escolha2 == "Não"){
+
+
+
+                }else {
+                    cout << "\tUm rato sobe na sua cara, você se assusta e se obriga a levantar!";
+                }
+
+    }else if (escolha1 == "não" || escolha1 == "Não"){
+        cout << "\tEstá bem, você sabe onde fica a saída, qualquer coisa é só dar um grito HAHAHA.";
+
+    }else {
+        cout << "\tTive uma ideia melhor garoto, por que não se senta e bebe um pouco?";
+
+    }
+
+    return 0;
+}
